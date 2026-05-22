@@ -4,9 +4,12 @@
 int main(int argc, const char* argv[]) {
     FILE* fp = fopen("log.txt", "a");
 
+    if (fp == NULL)
+        return 0;
+
     time_t now = time(NULL);
 
-    fprintf(fp, "program executed: %s", ctime(&now));
+    fprintf(fp, "success\n");
 
     fclose(fp);
 
