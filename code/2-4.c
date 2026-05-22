@@ -6,8 +6,20 @@ int main(int argc, const char* argv[]) {
 
     FILE* fp = fopen(argv[1], "r");
 
+    int freq[26] = { 0 };
+    char ch;
 
+    while ((ch = fgetc(fp)) != EOF) {
+        if (ch >= 'a' && ch <= 'z') {
+            freq[ch - 'a']++;
+        }
+    }
 
     fclose(fp);
-}
 
+    for (int i = 0; i < 26; i++) {
+        printf("%c: %d\n", 'a' + i, freq[i]);
+    }
+
+    return 0;
+}
