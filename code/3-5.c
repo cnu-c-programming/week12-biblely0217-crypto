@@ -11,21 +11,8 @@ int main(int argc, const char* argv[]) {
     int num;
     int sum = 0;
 
-    while (1) {
-        int result = fscanf(fp, "%d", &num);
-
-        if (result == EOF) {
-            break;
-        }
-
-        if (result == 1) {
-            sum += num;
-        }
-        else {
-            char buf[256];
-            fscanf(fp, "%s", buf);
-            fprintf(stderr, "invalid value: %s\n", buf);
-        }
+    while (fscanf(fp, "%d", &num) != EOF) {
+        sum += num;
     }
 
     printf("sum: %d\n", sum);
