@@ -23,3 +23,9 @@ int main(void) {
     
     return 0;
 }
+
+#include <stdio.h>
+
+int main(int argc, const char* argv[]) {
+    if (argc  < 2)
+}
